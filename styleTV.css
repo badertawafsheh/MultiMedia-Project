@@ -1,0 +1,53 @@
+body {
+    background-color: #F5F6FA;
+    font-family: 'Raleway', sans-serif;
+  }
+  video {
+    width: 829px;
+    height: 466px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+  
+  /* Note, this is position: relative so that we can put the image inside of it */
+  .tv-picture-container {
+    margin: 50px auto;
+    width: 900px; /* fixed width so we can get the faux screen to sit in place */
+    position: relative;
+  }
+  
+  /* super custom dimensions on the tv screen part */
+  .tv-show {
+    background-color: black;
+    top: 5px;
+    bottom: 77px;
+    right: 36px;
+    left: 35px;
+    overflow-x: hidden; /* if the image is the wrong aspect ratio, this cuts it off */
+    overflow-y: hidden; /* janky, yeah but youd probably work with a design to get this right IRL */
+    position: absolute;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: 200ms ease-in-out; /* Makes the transition nice and smooth */
+  }
+  
+  .channels-container {
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    width: 807px;
+    color: rgb(233, 230, 227);
+    text-transform: uppercase
+  }
+  
