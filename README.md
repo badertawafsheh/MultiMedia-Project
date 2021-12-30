@@ -28,4 +28,11 @@ __Video Extraction :__
 
 ` ffmpeg -i video-with-audio.mp4 -c copy -an video.mp4` 
 
+__MP4BOX :__
+------
+ 
+The DASH manifest, a .mpd file (Media Presentation Description), is an XML providing the identification and location of the above items, particularly the urls where the media files are hosted. To play the stream, the DASH player simply needs the manifest, as it fetches each part of the video needed from the information contained in the manifest. According to the network and CPU status, the player will choose the segment from the most suitable representation to deliver a stream with no buffering.
+
+` MP4Box -dash 2000 -frag 2000 -rap -segment-name 'segment$RepresentationID$' -fps 24 video_144.mp4#video:id=144 video_360.mp4#video:id=360 video_720.mp4#video:id=720 video_1080.mp4#video:id=1080:role=main Black_Audio.m4a#audio:id=sound -out manifest/manifestBlack.mpd `
+
 
