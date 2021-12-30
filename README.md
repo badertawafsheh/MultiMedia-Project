@@ -1,5 +1,5 @@
 # MultiMedia-Project
-**In this project i will stream a stored video usingHTTP protocol** 
+**In this project i will stream the stored videos usingHTTP protocol** 
 
 Ffmpeg video generation commands :
 ------
