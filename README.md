@@ -1,5 +1,5 @@
 # MultiMedia-Project
-In this project i will stream a stored video usingHTTP protocol 
+**{In this project i will stream a stored video usingHTTP protocol}** 
 
 Ffmpeg video generation commands :
 ------
@@ -20,10 +20,12 @@ The cleanest way to force I-frame positions using FFmpeg is to use the
 To choose the value of the GOP (distance between two keyframes) size, you’ll need to take in account the length of the segments you want to generate: segment length * framerate has to be a multiple of the GOP size.
 Example: if the frame rate is 24 and you want 2-seconds segments, the GOP size needs to be either 48 or 24). Know that if your GOP size is too big, the seek might not work properly in some players: as for quality switching, the player has to seek out an I-frame to resume the streaming.
 
-Audio Extraction :
+__Audio Extraction :__
+
 ` ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac `
 
-Video Extraction :
+__Video Extraction :__
+
 ` ffmpeg -i video-with-audio.mp4 -c copy -an video.mp4` 
 
 
