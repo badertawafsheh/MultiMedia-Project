@@ -35,4 +35,3 @@ The DASH manifest, a .mpd file (Media Presentation Description), is an XML provi
 
 ` MP4Box -dash 2000 -frag 2000 -rap -segment-name 'segment$RepresentationID$' -fps 24 video_144.mp4#video:id=144 video_360.mp4#video:id=360 video_720.mp4#video:id=720 video_1080.mp4#video:id=1080:role=main Black_Audio.m4a#audio:id=sound -out manifest/manifestBlack.mpd `
 
-
