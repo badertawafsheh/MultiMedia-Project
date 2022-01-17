@@ -5,9 +5,13 @@ Ffmpeg video generation commands :
 ------
 The cleanest way to force I-frame positions using FFmpeg is to use the 
 **{-x264opts ‘keyint=24:min-keyint=24:no-scenecut’}**  argument.
+
 1- -x264opts allow you to use additional options for the x264 encoding lib.
+
 2- keyint sets the maximum GOP (Group of Pictures) size, which is the group of 3- frames contained between two I-Frames. More info on GOPs.
+
 3- min-keyint sets the minimum GOP size.
+
 4- no-scenecut removes key-frames on scene cuts.
 
 ` ffmpeg -y -i video.mp4 -c:a aac -ac 2 -ab 128k -c:v libx264 -x264opts 'keyint=24:min-keyint=24:no-scenecut' -b:v 1500k -maxrate 1500k -crf 28 -bufsize 1000k -vf "scale=-1:720" video720.mp4 `
