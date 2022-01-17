@@ -6,14 +6,30 @@ Ffmpeg video generation commands :
 The cleanest way to force I-frame positions using FFmpeg is to use the 
 **{-x264opts ‘keyint=24:min-keyint=24:no-scenecut’}**  argument.
 
-1- -x264opts allow you to use additional options for the x264 encoding lib.
+ 1-ac Set the number of audio channels
 
-2- keyint sets the maximum GOP (Group of Pictures) size, which is the group of 3- frames contained between two I-Frames. 
+ 2-ab Set the audio bitrate
 
-3- min-keyint sets the minimum GOP size.
+ 3-c:v encodes all video streams with libx264 
 
-4- no-scenecut removes key-frames on scene cuts.
+ 4-x264opts allow you to use additional options for the x264 encoding lib.
 
+ 5-keyint sets the maximum GOP (Group of Pictures) size, which is the group of 3- frames contained between two I-Frames. 
+
+ 6-min-keyint sets the minimum GOP size.
+
+ 7-no-scenecut removes key-frames on scene cuts.
+ 
+ 8-b:v the bit rate 
+
+ 9-maxrate 
+
+ 10-crf : range of CRF 0-51 (QP)
+
+ 11-bufsize : buffer size 
+ 
+ 12-vf extra setting like "scale " to change the resolution 
+ 
 ` ffmpeg -y -i video.mp4 -c:a aac -ac 2 -ab 128k -c:v libx264 -x264opts 'keyint=24:min-keyint=24:no-scenecut' -b:v 1500k -maxrate 1500k -crf 28 -bufsize 1000k -vf "scale=-1:720" video720.mp4 `
  
 ` ffmpeg -y -i video.mp4  -c:a aac -ac 2 -ab 128k -c:v libx264 -x264opts 'keyint=24:min-keyint=24:no-scenecut' -b:v 800k -maxrate 800k  -crf 33 -bufsize 500k -vf "scale=-1:540" video540.mp4 `
