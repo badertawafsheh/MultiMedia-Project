@@ -8,7 +8,7 @@ The cleanest way to force I-frame positions using FFmpeg is to use the
 
 1- -x264opts allow you to use additional options for the x264 encoding lib.
 
-2- keyint sets the maximum GOP (Group of Pictures) size, which is the group of 3- frames contained between two I-Frames. More info on GOPs.
+2- keyint sets the maximum GOP (Group of Pictures) size, which is the group of 3- frames contained between two I-Frames. 
 
 3- min-keyint sets the minimum GOP size.
 
